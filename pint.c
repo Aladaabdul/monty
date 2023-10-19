@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "monty.h"
 /**
  * f_pint - This will print the top

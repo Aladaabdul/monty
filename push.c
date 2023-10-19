@@ -1,9 +1,10 @@
+#include <stdio.h>
 #include "monty.h"
 /**
- * f_push - this will add a node to the stack
- * @head: The stack head
- * @counter: line_number
- * Return: no return
+ * f_push - Main function
+ * @head: head
+ * @counter: Counter
+ * Return: 0
  */
 void f_push(stack_t **head, unsigned int counter)
 {
@@ -19,13 +20,19 @@ void f_push(stack_t **head, unsigned int counter)
 				flag = 1; }
 		if (flag == 1)
 		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
-			fclose (bus.file);
+			fclose(bus.file);
 			free(bus.content);
 			free_stack(*head);
-			exit (EXIT_FAILURE); }}
-		n = atoi (bus.arg);
-		if (bus.lifi == 0)
-			addnode(head, n);
-		else
-			addqueue(head, n);
+			exit(EXIT_FAILURE); }}
+	else
+	{ fprintf(stderr, "L%d: usage: push integer\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE); }
+	n = atoi(bus.arg);
+	if (bus.lifi == 0)
+		addnode(head, n);
+	else
+		addqueue(head, n);
 }

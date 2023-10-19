@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "monty.h"
 /**
  * f_pall - This will print the stack
